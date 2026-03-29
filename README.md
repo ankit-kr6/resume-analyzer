@@ -5,7 +5,7 @@ against a target job role and identifies skill gaps with a match score.
 
 ## Student Details
 - **Name:** Ankit Kumar Mandal
-- **Registration No:** [Your Registration Number]
+- **Registration No:** 25BAI10217
 - **Branch:** CSE (AI & ML) | First Year B.Tech
 - **University:** VIT Bhopal University
 - **Course:** CSA2001 - Bring Your Own Project (BYOP)
