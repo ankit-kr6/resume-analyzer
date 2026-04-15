@@ -1,57 +1,130 @@
-# Resume Analyzer + Skill Gap Detector
+# 🤖 AI-Powered Resume Analyzer + Skill Gap Detector
 
-A Python-based web application that analyzes a user's resume (PDF) 
-against a target job role and identifies skill gaps with a match score.
+<div align="center">
 
-## Student Details
-- **Name:** Ankit Kumar Mandal
-- **Registration No:** 25BAI10217
-- **Branch:** CSE (AI & ML) | First Year B.Tech
-- **University:** VIT Bhopal University
-- **Course:** CSA2001 - Bring Your Own Project (BYOP)
+![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)
+![Streamlit](https://img.shields.io/badge/Streamlit-Latest-red?style=for-the-badge&logo=streamlit)
+![NLP](https://img.shields.io/badge/NLP-TF--IDF-green?style=for-the-badge)
+![ML](https://img.shields.io/badge/ML-Cosine_Similarity-orange?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
-## Project Overview
-This tool helps students and job seekers identify the gap between 
-their current skillset and the requirements of their target job role. 
-The user uploads their resume as a PDF, selects a target job role, 
-and the application extracts skills, compares them against a 
-pre-defined skills database, and displays matched skills, missing 
-skills, and an overall match score.
+**An AI/ML-powered web application that analyzes resumes using TF-IDF Vectorization and Cosine Similarity to detect skill gaps for target job roles.**
 
-## Features
-- Upload PDF resume (any format)
-- Select from 6 target job roles
-- View matched skills in green
-- View missing skills in red
-- Get a percentage match score with progress bar
-- Color-coded feedback based on score
+[Features](#features) • [AI Algorithms](#ai-ml-algorithms-used) • [Setup](#setup-instructions) • [Usage](#usage) • [Job Roles](#supported-job-roles)
 
-## Supported Job Roles
-- Data Scientist
-- Web Developer
-- DevOps Engineer
-- Software Engineer
-- Data Analyst
-- ML Engineer
+</div>
 
-## Tech Stack
-- **Language:** Python 3.10+
-- **Framework:** Streamlit
-- **PDF Parsing:** pdfplumber
-- **Data Storage:** JSON
+---
 
-## Project Structure
+## 👨‍💻 Student Details
+
+| Field | Details |
+|-------|---------|
+| **Name** | Ankit Kumar Mandal |
+| **Registration No.** | 25BAI10217 |
+| **Branch** | CSE (AI & ML) |
+| **Year** | First Year B.Tech |
+| **University** | VIT Bhopal University |
+| **Course** | CSA2001 — Bring Your Own Project (BYOP) |
+
+---
+
+## 🎯 Project Overview
+
+The **AI-Powered Resume Analyzer + Skill Gap Detector** solves a real-world problem: students and job seekers don't know which skills they're missing for their target roles.
+
+**How it works:**
+1. User uploads their resume as a PDF
+2. `pdfplumber` extracts all text from the PDF
+3. **TF-IDF Vectorization** converts text into numerical vectors
+4. **Cosine Similarity** computes semantic match between resume and job role
+5. **Hybrid scoring** combines keyword matching (60%) + AI similarity (40%)
+6. Results displayed with matched skills, missing skills, and match score
+
+---
+
+## 🧠 AI/ML Algorithms Used
+
+### 1. TF-IDF Vectorization (Term Frequency — Inverse Document Frequency)
+```
+TF(t, d)  = (Number of times term t appears in document d) / (Total terms in d)
+IDF(t, D) = log((N + 1) / (df(t) + 1)) + 1
+TF-IDF    = TF × IDF
+```
+Converts raw resume text into meaningful numerical vectors that capture the importance of each term relative to all documents.
+
+### 2. Cosine Similarity
+```
+similarity(A, B) = (A · B) / (||A|| × ||B||)
+```
+Measures the cosine of the angle between the resume vector and the job role skills vector. Returns 0 (no match) to 1 (perfect match).
+
+### 3. Hybrid Scoring Model
+```
+Final Score = (Keyword Match Score × 0.6) + (AI Similarity Score × 0.4)
+```
+Combines keyword-based exact matching with semantic TF-IDF similarity for more accurate results than either method alone.
+
+---
+
+## ✨ Features
+
+| Feature | Description |
+|---------|-------------|
+| PDF Upload | Upload any PDF resume via browser |
+| TF-IDF Analysis | Real NLP vectorization of resume text |
+| Cosine Similarity | ML-based semantic matching algorithm |
+| Hybrid AI Score | Weighted combination of keyword + AI scores |
+| 8 Job Roles | Data Scientist, Web Dev, DevOps, SWE, Data Analyst, ML Engineer, AI Engineer, Cloud Engineer |
+| Skill Breakdown | Color-coded matched vs missing skills |
+| Learning Path | Recommended resources for missing skills |
+| AI Explainer | Transparent breakdown of how score was computed |
+
+---
+
+## 🛠️ Tech Stack
+
+```
+Language    : Python 3.10+
+Framework   : Streamlit (Web Application)
+PDF Parser  : pdfplumber
+NLP Engine  : Custom TF-IDF + Cosine Similarity (implemented from scratch)
+Database    : JSON (skills_db.json)
+Version     : Git & GitHub
+```
+
+---
+
+## 📁 Project Structure
+
 ```
 resume-analyzer/
 ├── app.py              # Main Streamlit application
-├── analyzer.py         # PDF parsing and skill extraction logic
-├── skills_db.json      # Job role to skills mapping database
+├── analyzer.py         # AI/ML engine: TF-IDF + Cosine Similarity
+├── skills_db.json      # Job roles → required skills database
 ├── requirements.txt    # Python dependencies
 ├── sample_resume.pdf   # Sample resume for testing
-└── README.md           # Project documentation
+└── README.md           # Documentation
 ```
 
-## Setup Instructions
+---
+
+## 💼 Supported Job Roles
+
+| Job Role | Key Skills |
+|----------|-----------|
+| Data Scientist | Python, ML, SQL, Statistics, TensorFlow, Pandas, NumPy |
+| Web Developer | HTML, CSS, JavaScript, React, Node.js, REST API |
+| DevOps Engineer | Docker, Kubernetes, CI/CD, Linux, AWS, Jenkins |
+| Software Engineer | Data Structures, Algorithms, OOP, Git, SQL |
+| Data Analyst | Excel, SQL, Python, Tableau, Power BI, Statistics |
+| ML Engineer | Python, TensorFlow, PyTorch, ML, Docker, REST API |
+| AI Engineer | Python, Deep Learning, NLP, TensorFlow, Computer Vision |
+| Cloud Engineer | AWS, Azure, Docker, Kubernetes, Linux, Terraform |
+
+---
+
+## 🚀 Setup Instructions
 
 ### Prerequisites
 - Python 3.10 or higher
@@ -73,27 +146,93 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+> ✅ Fully CLI-executable — single command launches the entire application.
+
 ### Step 4: Use the Application
-- Browser opens automatically at http://localhost:8501
-- Upload any PDF resume using the file uploader
-- Select your target job role from the dropdown
-- View your skill gap report instantly
+- Browser opens at `http://localhost:8501`
+- Upload PDF resume
+- Select target job role
+- View AI-powered skill gap analysis
 
-## Sample Test
-A sample resume (sample_resume.pdf) is included in the repository 
-for testing purposes. Upload it and select "Data Scientist" to see 
-the application in action.
+---
 
-## How It Works
-1. User uploads PDF resume
-2. pdfplumber extracts all text from the PDF
-3. analyzer.py matches extracted text against skills database
-4. Matched and missing skills are identified
-5. Match score is calculated as percentage of required skills found
-6. Results displayed with color-coded visual feedback
+## 🧪 Quick Test
 
-## Requirements
+```bash
+git clone https://github.com/ankit-kr6/resume-analyzer
+cd resume-analyzer
+pip install -r requirements.txt
+streamlit run app.py
+# Upload sample_resume.pdf → Select "Data Scientist" → View results
+```
+
+---
+
+## 📊 Algorithm Flow
+
+```
+PDF Resume
+    ↓
+pdfplumber (text extraction)
+    ↓
+tokenize() → clean & split text
+    ↓
+compute_tf() → Term Frequency
+    ↓
+compute_idf() → Inverse Document Frequency
+    ↓
+compute_tfidf_vector() → TF-IDF Vector
+    ↓
+cosine_similarity() → Semantic Match Score
+    ↓
+compute_weighted_match_score() → Hybrid Final Score
+    ↓
+Streamlit UI → Visual Results
+```
+
+---
+
+## 📈 Syllabus Concepts Applied (AI & ML)
+
+| Concept | Implementation |
+|---------|---------------|
+| NLP — Text Processing | Tokenization, TF-IDF vectorization |
+| ML — Similarity Metrics | Cosine Similarity algorithm |
+| Mathematics | Vector dot products, magnitudes, logarithms |
+| Data Structures | Dictionaries for TF-IDF vectors, Lists for skills |
+| File Handling | PDF text extraction using pdfplumber |
+| Web Development | Streamlit interactive web application |
+| JSON | Skills database storage and retrieval |
+| Algorithm Design | Hybrid scoring model (weighted combination) |
+
+---
+
+## 📝 Requirements
+
 ```
 streamlit
 pdfplumber
 ```
+
+Install: `pip install -r requirements.txt`
+
+---
+
+## 🔮 Future Scope
+
+- Integration of pre-trained BERT/Word2Vec models for deeper semantic matching
+- LinkedIn API integration for real-time job market skill requirements
+- Support for DOCX and TXT resume formats
+- Resume improvement suggestions with course recommendations
+- ATS (Applicant Tracking System) score simulation
+- Named Entity Recognition (NER) for better skill extraction
+
+---
+
+<div align="center">
+
+**Made with ❤️ by Ankit Kumar Mandal | VIT Bhopal University**
+
+[GitHub](https://github.com/ankit-kr6) • [LinkedIn](https://linkedin.com/in/ankit-kumar-mandal-78b66436b) • [Kaggle](https://kaggle.com/ankitkr6)
+
+</div>
