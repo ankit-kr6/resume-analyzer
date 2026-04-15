@@ -1,8 +1,36 @@
 {
-  "Data Scientist": ["Python", "Machine Learning", "SQL", "Statistics", "TensorFlow", "Pandas", "Data Visualization"],
-  "Web Developer": ["HTML", "CSS", "JavaScript", "React", "Node.js", "REST API", "Git"],
-  "DevOps Engineer": ["Docker", "Kubernetes", "CI/CD", "Linux", "AWS", "Jenkins", "Terraform"],
-  "Software Engineer": ["Data Structures", "Algorithms", "OOP", "Git", "SQL", "System Design"],
-  "Data Analyst": ["Excel", "SQL", "Python", "Tableau", "Power BI", "Statistics", "Pandas"],
-  "ML Engineer": ["Python", "TensorFlow", "PyTorch", "Machine Learning", "Docker", "REST API", "SQL"]
+  "Data Scientist": [
+    "Python", "Machine Learning", "SQL", "Statistics", "TensorFlow",
+    "Pandas", "Data Visualization", "NumPy", "Scikit-learn", "Deep Learning",
+    "NLP", "Data Analysis", "Matplotlib", "Jupyter"
+  ],
+  "Web Developer": [
+    "HTML", "CSS", "JavaScript", "React", "Node.js", "REST API", "Git",
+    "TypeScript", "MongoDB", "Express", "Bootstrap", "JSON"
+  ],
+  "DevOps Engineer": [
+    "Docker", "Kubernetes", "CI/CD", "Linux", "AWS", "Jenkins", "Terraform",
+    "Git", "Python", "Bash", "Ansible", "Azure"
+  ],
+  "Software Engineer": [
+    "Data Structures", "Algorithms", "OOP", "Git", "SQL", "System Design",
+    "Python", "Java", "Problem Solving", "REST API", "Testing"
+  ],
+  "Data Analyst": [
+    "Excel", "SQL", "Python", "Tableau", "Power BI", "Statistics",
+    "Pandas", "Data Visualization", "NumPy", "Google Analytics", "R"
+  ],
+  "ML Engineer": [
+    "Python", "TensorFlow", "PyTorch", "Machine Learning", "Docker",
+    "REST API", "SQL", "NumPy", "Scikit-learn", "Deep Learning", "Git", "Linux"
+  ],
+  "AI Engineer": [
+    "Python", "Deep Learning", "NLP", "TensorFlow", "PyTorch",
+    "Machine Learning", "Computer Vision", "Transformers", "Scikit-learn",
+    "NumPy", "Pandas", "Docker", "REST API"
+  ],
+  "Cloud Engineer": [
+    "AWS", "Azure", "Docker", "Kubernetes", "Linux", "Python",
+    "Terraform", "CI/CD", "Git", "Bash", "Networking"
+  ]
 }
